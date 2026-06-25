@@ -118,6 +118,7 @@ services:
 
 volumes:
   postgres_data:
-  elasticsearch_data:
+  elasticsearch_data: 
   redis_data:
   grafana_data:
+   
