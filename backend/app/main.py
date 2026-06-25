@@ -7,6 +7,7 @@ from prometheus_fastapi_instrumentator import Instrumentator
 from app.api import auth, documents, health, search
 from app.core.config import get_settings
 from app.models.database import init_db
+
 from app.services.elasticsearch_service import ElasticsearchService
 from app.services.redis_service import RedisCache
 
