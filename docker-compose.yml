@@ -79,16 +79,16 @@ services:
       timeout: 5s
       retries: 20
 
-  #front:
-  #build:
-  #context: ./frontend
-  #args:
-  #VITE_API_URL: /api/v1
-  #ports:
-  #- "3000:80"
-  #depends_on:
-  #app:
-  #condition: service_healthy
+  front:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /api/v1
+    ports:
+      - "3000:80"
+    depends_on:
+      app:
+        condition: service_healthy
 
   #prometheus:
   #image: prom/prometheus:v2.55.1
@@ -118,7 +118,6 @@ services:
 
 volumes:
   postgres_data:
-  elasticsearch_data: 
+  elasticsearch_data:
   redis_data:
   grafana_data:
-   
