@@ -50,6 +50,7 @@ services:
 
   app:
     build: ./backend
+    restart: unless-stopped
     environment:
       APP_ENV: ${APP_ENV:-development}
       AUTH_USERNAME: ${AUTH_USERNAME:-student}
@@ -86,6 +87,7 @@ services:
         VITE_API_URL: /api/v1
     ports:
       - "3000:80"
+    restart: unless-stopped
     depends_on:
       app:
         condition: service_healthy
