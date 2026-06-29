@@ -1,4 +1,3 @@
-````markdown
 # University Knowledge Search
 
 Интеллектуальная поисковая система по внутренней базе знаний университета.
@@ -24,7 +23,6 @@
 ```bash
 cp .env.example .env
 ```
-````
 
 ### 2. Запуск проекта
 
@@ -36,7 +34,7 @@ docker compose up --build -d
 
 После запуска приложение будет доступно по адресу:
 
-```
+```text
 http://localhost:3000
 ```
 
@@ -68,15 +66,11 @@ http://localhost:3000
 
 ## Структура репозитория
 
-```
+```text
 .
 ├── backend/      # API (FastAPI), парсеры документов и бизнес-логика
 ├── frontend/     # Клиентское приложение (React, Vite, Nginx)
 ├── e2e/          # Сквозные тесты (Playwright)
 ├── monitoring/   # Конфигурации Prometheus и Grafana
 └── docs/         # Техническая документация проекта
-```
-
-```
-
 ```
