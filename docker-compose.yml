@@ -37,16 +37,16 @@ services:
       timeout: 5s
       retries: 30
 
-  #redis:
-  #image: redis:7-alpine
-  #command: redis-server --appendonly yes
-  #volumes:
-  #- redis_data:/data
-  #healthcheck:
-  #test: ["CMD", "redis-cli", "ping"]
-  #interval: 5s
-  #timeout: 3s
-  #retries: 20
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
 
   app:
     build: ./backend
@@ -71,8 +71,8 @@ services:
         condition: service_healthy
       elasticsearch:
         condition: service_healthy
-      #redis:
-      #condition: service_healthy
+      redis:
+        condition: service_healthy
     healthcheck:
       test:
         ["CMD-SHELL", "curl -fsS http://localhost:8000/api/v1/health || exit 1"]
