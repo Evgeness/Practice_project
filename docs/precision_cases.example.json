@@ -1,0 +1,12 @@
+[
+  {"query": "университетская база знаний", "expected_file": "sample.docx"},
+  {"query": "проверка загрузки", "expected_file": "sample.docx"},
+  {"query": "индексация документов", "expected_file": "sample.docx"},
+  {"query": "полнотекстовый поиск", "expected_file": "sample.docx"},
+  {"query": "Elasticsearch", "expected_file": "sample.docx"},
+  {"query": "FastAPI", "expected_file": "sample.docx"},
+  {"query": "React", "expected_file": "sample.docx"},
+  {"query": "PostgreSQL", "expected_file": "sample.docx"},
+  {"query": "Redis", "expected_file": "sample.docx"},
+  {"query": "система поиска", "expected_file": "sample.docx"}
+]
