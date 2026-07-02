@@ -1,13 +1,9 @@
 from fastapi import Depends, HTTPException, Request, status
-
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
 from app.core.config import Settings, get_settings
-
 from app.services.auth_service import AuthService, InvalidTokenError
-
 from app.services.elasticsearch_service import ElasticsearchService
-
 from app.services.redis_service import RedisCache
 
 bearer_scheme = HTTPBearer(auto_error=False)

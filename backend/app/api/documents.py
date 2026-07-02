@@ -1,13 +1,11 @@
 from uuid import uuid4
 
 from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile, status
-
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_elasticsearch, require_user
 from app.core.config import Settings, get_settings
-
 from app.models.database import get_db
 from app.models.document import Document
 from app.schemas.document import DocumentListResponse, DocumentResponse

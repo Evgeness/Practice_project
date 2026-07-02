@@ -3,10 +3,10 @@ from io import BytesIO
 from pathlib import Path
 
 import pytest
+from app.api.search import search_documents
 from fastapi import HTTPException, UploadFile
 
 from app.api.documents import upload_document
-from app.api.search import search_documents
 from app.core.config import Settings
 
 FIXTURES = Path(__file__).parent / "fixtures"

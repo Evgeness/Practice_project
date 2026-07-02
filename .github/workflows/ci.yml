@@ -45,3 +45,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker compose build
+
+  deploy:
+    name: CD
+    needs: [docker-build]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Deployment Configuration
+        run: |
+          docker compose config --quiet
+          bash -n init.sh
